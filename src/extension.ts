@@ -7,34 +7,28 @@ const expansions: Record<string, Record<string, string>> = {
 		functionShortcut: '${1}:\n	${2}',
 		ifShortcut: ''
 	},
-	bash: {
-		variableShortcut: '${1}=${2}',
-		constVariableShortcut: 'readonly ${1}=${2}',
-		functionShortcut: '${1}() {\n\t${2}\n}',
-		ifShortcut: 'if [ ${1} ]; then\n\t${2}\nfi'
-	},
 	c: {
 		variableShortcut: 'int ${1} = ${2};',
 		constVariableShortcut: 'const int ${1} = ${2};',
-		functionShortcut: 'void ${1}() {\n\t${2}\n}',
+		functionShortcut: '${1:void} ${2}() {\n\t${3}\n}',
 		ifShortcut: 'if (${1}) {\n\t${2}\n}'
 	},
 	csharp: {
 		variableShortcut: 'int ${1} = ${2};',
 		constVariableShortcut: 'const int ${1} = ${2};',
-		functionShortcut: 'void ${1}() {\n\t${2}\n}',
+		functionShortcut: '${1:void} ${2}() {\n\t${3}\n}',
 		ifShortcut: 'if (${1}) {\n\t${2}\n}'
 	},
 	cpp: {
 		variableShortcut: 'int ${1} = ${2};',
 		constVariableShortcut: 'const int ${1} = ${2};',
-		functionShortcut: 'void ${1}() {\n\t${2}\n}',
+		functionShortcut: '${1:void} ${2}() {\n\t${3}\n}',
 		ifShortcut: 'if (${1}) {\n\t${2}\n}'
 	},
 	dart: {
 		variableShortcut: 'var ${1} = ${2};',
 		constVariableShortcut: 'const ${1} = ${2};',
-		functionShortcut: '',
+		functionShortcut: '${1:void} ${2}() {\n\t${3}\n}',
 		ifShortcut: 'if (${1}) {\n\t${2}\n}'
 	},
 	go: {
@@ -52,7 +46,7 @@ const expansions: Record<string, Record<string, string>> = {
 	java: {
 		variableShortcut: 'int ${1} = ${2};',
 		constVariableShortcut: 'final int ${1} = ${2};',
-		functionShortcut: '',
+		functionShortcut: '${1:void} ${2}() {\n\t${3}\n}',
 		ifShortcut: 'if (${1}) {\n\t${2}\n}'
 	},
 	javascript: {
