@@ -32,7 +32,7 @@ If you discover a security vulnerability, find a bug, or have an improvement ide
 
 ## License
 
-This project is source-available, not open source. You may view and modify the code for personal, non-commercial use. Redistribution (of the original or modified code) and commercial use are not permitted without explicit permission. See [LICENSE](./PolyForm%20Strict%201.0.0.txt) for full terms.
+This project is source-available, not open source. You may view and modify the code for personal, non-commercial use. Redistribution (of the original or modified code) and commercial use are not permitted without explicit permission. See [LICENSE](./LICENSE) for full terms.
 
 ### Version Number Explanation
 

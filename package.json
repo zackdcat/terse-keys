@@ -2,6 +2,7 @@
   "name": "terse-keys",
   "displayName": "terse-keys",
   "description": "Keybinds that make it faster to type code constructs.",
+  "publisher": "zackdcat",
   "version": "1.0.0",
   "engines": {
     "vscode": "^1.125.0"
@@ -9,6 +10,10 @@
   "categories": [
     "Other"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zackdcat/terse-keys"
+  },
   "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
