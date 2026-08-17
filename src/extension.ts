@@ -1,131 +1,137 @@
 import * as vscode from 'vscode';
 
 const expansions: Record<string, Record<string, string>> = {
-	Assembly: {
-		variableShortcut: '',
-		constVariableShortcut: '',
-		functionShortcut: '',
+	assembly: {
+		variableShortcut: '${1} dq ${2}',
+		constVariableShortcut: '${1} equ ${2}',
+		functionShortcut: '${1}:\n	${2}',
 		ifShortcut: ''
 	},
 	bash: {
-		variableShortcut: '',
-		constVariableShortcut: 'readonly ',
-		functionShortcut: '',
-		ifShortcut: 'if []; then\n\nfi'
+		variableShortcut: '${1}=${2}',
+		constVariableShortcut: 'readonly ${1}=${2}',
+		functionShortcut: '${1}() {\n\t${2}\n}',
+		ifShortcut: 'if [ ${1} ]; then\n\t${2}\nfi'
 	},
 	c: {
-		variableShortcut: '',
-		constVariableShortcut: 'const ',
-		functionShortcut: '',
-		ifShortcut: 'if () {\n\n}'
+		variableShortcut: 'int ${1} = ${2};',
+		constVariableShortcut: 'const int ${1} = ${2};',
+		functionShortcut: 'void ${1}() {\n\t${2}\n}',
+		ifShortcut: 'if (${1}) {\n\t${2}\n}'
 	},
 	csharp: {
-		variableShortcut: 'int ',
-		constVariableShortcut: 'const int ',
-		functionShortcut: '',
-		ifShortcut: 'if () {\n\n}'
+		variableShortcut: 'int ${1} = ${2};',
+		constVariableShortcut: 'const int ${1} = ${2};',
+		functionShortcut: 'void ${1}() {\n\t${2}\n}',
+		ifShortcut: 'if (${1}) {\n\t${2}\n}'
 	},
 	cpp: {
-		variableShortcut: 'int ',
-		constVariableShortcut: 'const int ',
-		functionShortcut: '',
-		ifShortcut: 'if () {\n\n}'
+		variableShortcut: 'int ${1} = ${2};',
+		constVariableShortcut: 'const int ${1} = ${2};',
+		functionShortcut: 'void ${1}() {\n\t${2}\n}',
+		ifShortcut: 'if (${1}) {\n\t${2}\n}'
 	},
 	dart: {
-		variableShortcut: '',
-		constVariableShortcut: 'const ',
+		variableShortcut: 'var ${1} = ${2};',
+		constVariableShortcut: 'const ${1} = ${2};',
 		functionShortcut: '',
-		ifShortcut: 'if () {\n\n}'
+		ifShortcut: 'if (${1}) {\n\t${2}\n}'
 	},
 	go: {
-		variableShortcut: '',
-		constVariableShortcut: 'const ',
-		functionShortcut: 'func ',
-		ifShortcut: 'if  {\n\n}'
+		variableShortcut: '${1} := ${2}',
+		constVariableShortcut: 'const ${1} = ${2}',
+		functionShortcut: 'func ${1}() {\n\t${2}\n}',
+		ifShortcut: 'if ${1} {\n\t${2}\n}'
 	},
 	haskell: {
-		variableShortcut: '',
-		constVariableShortcut: '',
-		functionShortcut: '',
-		ifShortcut: ''
+		variableShortcut: '${1} = ${2}',
+		constVariableShortcut: '${1} = ${2}',
+		functionShortcut: '${1} ${2} = ${3}',
+		ifShortcut: 'if ${1} then\n\t${2}\nelse\n\t${3}'
 	},
 	java: {
-		variableShortcut: 'int ',
-		constVariableShortcut: 'final int ',
+		variableShortcut: 'int ${1} = ${2};',
+		constVariableShortcut: 'final int ${1} = ${2};',
 		functionShortcut: '',
-		ifShortcut: 'if () {\n\n}'
+		ifShortcut: 'if (${1}) {\n\t${2}\n}'
 	},
 	javascript: {
-		variableShortcut: 'var ',
-		constVariableShortcut: 'const ',
-		functionShortcut: 'function ',
-		ifShortcut: 'if () {\n\n}'
+		variableShortcut: 'let ${1} = ${2};',
+		constVariableShortcut: 'const ${1} = ${2};',
+		functionShortcut: 'function ${1}() {\n\t${2}\n}',
+		ifShortcut: 'if (${1}) {\n\t${2}\n}'
 	},
 	kotlin: {
-		variableShortcut: 'var ',
-		constVariableShortcut: 'const val ',
-		functionShortcut: 'fun ',
-		ifShortcut: 'if () {\n\n}'
+		variableShortcut: 'var ${1} = ${2}',
+		constVariableShortcut: 'val ${1} = ${2}',
+		functionShortcut: 'fun ${1}() {\n\t${2}\n}',
+		ifShortcut: 'if (${1}) {\n\t${2}\n}'
 	},
 	lua: {
-		variableShortcut: '',
-		constVariableShortcut: '',
-		functionShortcut: 'function ',
-		ifShortcut: 'if  then\n\nend'
+		variableShortcut: 'local ${1} = ${2}',
+		constVariableShortcut: '${1} = ${2}',
+		functionShortcut: 'function ${1}()\n\t${2}\nend',
+		ifShortcut: 'if ${1} then\n\t${2}\nend'
 	},
 	php: {
-		variableShortcut: '$',
-		constVariableShortcut: 'const ',
-		functionShortcut: 'function ',
-		ifShortcut: 'if ($) {}'
+		variableShortcut: '$${1} = ${2};',
+		constVariableShortcut: 'const ${1} = ${2};',
+		functionShortcut: 'function ${1}() {\n\t${2}\n}',
+		ifShortcut: 'if ($${1}) {\n\t${2}\n}'
 	},
 	python: {
-		variableShortcut: '',
-		constVariableShortcut: '',
-		functionShortcut: 'def ():',
-		ifShortcut: 'if :'
+		variableShortcut: '${1} = ${2}',
+		constVariableShortcut: '${1} = ${2}',
+		functionShortcut: 'def ${1}():\n\t${2}',
+		ifShortcut: 'if ${1}:\n\t${2}'
 	},
 	r: {
-		variableShortcut: '',
-		constVariableShortcut: '',
-		functionShortcut: ' <- function() {\n\n}',
-		ifShortcut: 'if () {\n\n}'
+		variableShortcut: '${1} <- ${2}',
+		constVariableShortcut: '${1} <- ${2}',
+		functionShortcut: '${1} <- function() {\n\t${2}\n}',
+		ifShortcut: 'if (${1}) {\n\t${2}\n}'
 	},
 	ruby: {
-		variableShortcut: '',
-		constVariableShortcut: '',
-		functionShortcut: 'def \n\nend',
-		ifShortcut: 'if \n\nend'
+		variableShortcut: '${1} = ${2}',
+		constVariableShortcut: '${1} = ${2}',
+		functionShortcut: 'def ${1}\n\t${2}\nend',
+		ifShortcut: 'if ${1}\n\t${2}\nend'
 	},
 	rust: {
-		variableShortcut: 'let mut ',
-		constVariableShortcut: 'let ',
-		functionShortcut: 'fn () {\n\n}',
-		ifShortcut: 'if  {\n\n}'
+		variableShortcut: 'let mut ${1} = ${2};',
+		constVariableShortcut: 'let ${1} = ${2};',
+		functionShortcut: 'fn ${1}() {\n\t${2}\n}',
+		ifShortcut: 'if ${1} {\n\t${2}\n}'
+	},
+	shellscript: {
+		variableShortcut: '${1}=${2}',
+		constVariableShortcut: 'readonly ${1}=${2}',
+		functionShortcut: '${1}() {\n\t${2}\n}',
+		ifShortcut: 'if [ ${1} ]; then\n\t${2}\nfi'
 	},
 	sql: {
-		variableShortcut: 'SET ',
+		variableShortcut: 'SET @${1} = ${2};',
 		constVariableShortcut: '',
-		functionShortcut: '',
-		ifShortcut: 'SELECT IF()'
+		functionShortcut: 'CREATE FUNCTION ${1}()\nRETURNS ${2}\nBEGIN\n\t${3}\nEND;',
+		ifShortcut: 'IF ${1} THEN\n\t${2}\nEND IF;'
 	},
 	swift: {
-		variableShortcut: 'var ',
-		constVariableShortcut: 'let ',
-		functionShortcut: 'func ',
-		ifShortcut: 'if  {\n\n}'
+		variableShortcut: 'var ${1} = ${2}',
+		constVariableShortcut: 'let ${1} = ${2}',
+		functionShortcut: 'func ${1}() {\n\t${2}\n}',
+		ifShortcut: 'if ${1} {\n\t${2}\n}'
 	},
 	typescript: {
-		variableShortcut: 'var ',
-		constVariableShortcut: 'const ',
-		functionShortcut: 'function ',
-		ifShortcut: 'if () {\n\n}'
+		variableShortcut: 'let ${1} = ${2};',
+		constVariableShortcut: 'const ${1}: ${2} = ${3};',
+		functionShortcut: 'function ${1}() {\n\t${2}\n}',
+		ifShortcut: 'if (${1}) {\n\t${2}\n}'
 	},
 	zig: {
-		variableShortcut: 'var x: ',
-		constVariableShortcut: 'const x: ',
-		functionShortcut: 'fn () {\n\n}',
-		ifShortcut: 'if () {\n\n}'
+		variableShortcut: 'var ${1}: ${2} = ${3};',
+		constVariableShortcut: 'const ${1}: ${2} = ${3};',
+		functionShortcut: 'fn ${1}() void {\n\t${2}\n}',
+		ifShortcut: 'if (${1}) {\n\t${2}\n}'
 	}
 }
 
@@ -140,9 +146,10 @@ export function activate(context: vscode.ExtensionContext) {
 
 		if (text === undefined) return;
 
-		editor.edit(editBuilder => {
-			editBuilder.insert(editor.selection.active, text);
-		})
+		editor.insertSnippet(
+			new vscode.SnippetString(text),
+			editor.selection.active
+		);
 	});
 	context.subscriptions.push(disposable);
 }

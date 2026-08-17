@@ -1,5 +1,5 @@
 # TERSE KEYS
-<sub>v1.0.2</sub><br>
+<sub>v2.0.0</sub><br>
 
 Keybinds that make it faster to type code constructs.
 
@@ -16,15 +16,29 @@ Keybinds that make it faster to type code constructs.
 
 Each keybind inserts the correct syntax for whatever language you're currently editing. Not every language has a real construct for every bind (e.g. Python has no `const` keyword) — in those cases, the keybind does nothing rather than inserting something wrong.
 
+## Tab
+
+You can press tab to move through the expression to fill out each section of the skeleton/declaration.
+
 ## Supported Languages
 
 Assembly, Bash, C, C#, C++, Dart, Go, Haskell, Java, JavaScript, Kotlin, Lua, PHP, Python, R, Ruby, Rust, SQL, Swift, TypeScript, Zig
 
+### Disclaimer!
+
+All these languages are supported but not all expressions may work since they may have special data types or not supported expressions for each type. Multiple data types may be added soon.
+
 ## Getting Started
 
+You can install the extention from the vscode extention store or you could install with this command:
 ```bash
 code --install-extension zackdcat.terse-keys
 ```
+or you can install it with:
+```bash
+ext install zackdcat.terse-keys
+```
+after pressing ctrl+p.
 
 ## Bug Reporting
 
