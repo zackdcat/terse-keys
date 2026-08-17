@@ -42,7 +42,7 @@ after pressing ctrl+p.
 
 ## Bug Reporting
 
-If you discover a security vulnerability, find a bug, or have an improvement idea, please report it by opening an issue or contacting me directly, including a description of the issue and, where possible, steps to reproduce or a suggested remediation. Reports will be reviewed and addressed as promptly as possible. Contributors who responsibly disclose vulnerabilities will be credited in this README upon request.
+If you discover a security vulnerability, find a bug, or have an improvement idea, please report it by opening an issue or contacting me directly, including a description of the issue and, where possible, steps to reproduce or a suggested remediation. Reports will be reviewed and addressed as promptly as possible. Contributors who responsibly disclose vulnerabilities will be credited in this README upon request. Email: zwhseton@gmail.com
 
 ## License
 
