@@ -1,71 +1,47 @@
-# terse-keys README
+# TERSE KEYS
+<sub>v1.0.0</sub><br>
 
-This is the README for your extension "terse-keys". After writing up a brief description, we recommend including the following sections.
+Keybinds that make it faster to type code constructs.
 
-## Features
+🔗 [VSCode Extention](https://marketplace.visualstudio.com/items?itemName=zackdcat.terse-keys)
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+## Keybinds
 
-For example if there is an image subfolder under your extension project workspace:
+| Key | Inserts |
+|-----|---------|
+| `Alt + v` | Variable declaration |
+| `Alt + c` | Constant declaration |
+| `Alt + f` | Function skeleton |
+| `Alt + i` | If-statement skeleton |
 
-\!\[feature X\]\(images/feature-x.png\)
+Each keybind inserts the correct syntax for whatever language you're currently editing. Not every language has a real construct for every bind (e.g. Python has no `const` keyword) — in those cases, the keybind does nothing rather than inserting something wrong.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Supported Languages
 
-## Requirements
+Assembly, Bash, C, C#, C++, Dart, Go, Haskell, Java, JavaScript, Kotlin, Lua, PHP, Python, R, Ruby, Rust, SQL, Swift, TypeScript, Zig
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+## Getting Started
 
-## Extension Settings
+```bash
+code --install-extension zackdcat.terse-keys
+```
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+## Bug Reporting
 
-For example:
+If you discover a security vulnerability, find a bug, or have an improvement idea, please report it by opening an issue or contacting me directly, including a description of the issue and, where possible, steps to reproduce or a suggested remediation. Reports will be reviewed and addressed as promptly as possible. Contributors who responsibly disclose vulnerabilities will be credited in this README upon request.
 
-This extension contributes the following settings:
+## License
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+This project is source-available, not open source. You may view and modify the code for personal, non-commercial use. Redistribution (of the original or modified code) and commercial use are not permitted without explicit permission. See [LICENSE](./PolyForm%20Strict%201.0.0.txt) for full terms.
 
-## Known Issues
+### Version Number Explanation
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+- First number corresponds to a big update adding a full feature that greatly impacts the vscode extension or changes something drastically.
+- Second number corresponds to changes that have been made to the vscode extension since the last update of the second number.
+- Third number corresponds to the amount of commits that have been made since the last update of the second number.
 
-## Release Notes
+### Credits
 
-Users appreciate release notes as you update your extension.
+Built and maintained by [zackdcat](https://github.com/zackdcat).
 
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+- Nothing here yet — contributors who report vulnerabilities or submit code will be listed here, with their permission.

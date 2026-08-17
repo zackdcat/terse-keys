@@ -1,127 +1,127 @@
 import * as vscode from 'vscode';
 
 const expansions: Record<string, Record<string, string>> = {
-	Assembly: { //FINISHED
+	Assembly: {
 		variableShortcut: '',
 		constVariableShortcut: '',
 		functionShortcut: '',
 		ifShortcut: ''
 	},
-	bash: { //FINISHED
+	bash: {
 		variableShortcut: '',
 		constVariableShortcut: 'readonly ',
 		functionShortcut: '',
 		ifShortcut: 'if []; then\n\nfi'
 	},
-	c: { //FINISHED
+	c: {
 		variableShortcut: '',
 		constVariableShortcut: 'const ',
 		functionShortcut: '',
 		ifShortcut: 'if () {\n\n}'
 	},
-	csharp: { //FINISHED
+	csharp: {
 		variableShortcut: 'int ',
 		constVariableShortcut: 'const int ',
 		functionShortcut: '',
 		ifShortcut: 'if () {\n\n}'
 	},
-	cpp: { //FINISHED
+	cpp: {
 		variableShortcut: 'int ',
 		constVariableShortcut: 'const int ',
 		functionShortcut: '',
 		ifShortcut: 'if () {\n\n}'
 	},
-	dart: { //FINISHED
+	dart: {
 		variableShortcut: '',
 		constVariableShortcut: 'const ',
 		functionShortcut: '',
 		ifShortcut: 'if () {\n\n}'
 	},
-	go: { //FINISHED
+	go: {
 		variableShortcut: '',
 		constVariableShortcut: 'const ',
 		functionShortcut: 'func ',
 		ifShortcut: 'if  {\n\n}'
 	},
-	haskell: { //FINISHED
+	haskell: {
 		variableShortcut: '',
 		constVariableShortcut: '',
 		functionShortcut: '',
 		ifShortcut: ''
 	},
-	java: { //FINISHED
+	java: {
 		variableShortcut: 'int ',
 		constVariableShortcut: 'final int ',
 		functionShortcut: '',
 		ifShortcut: 'if () {\n\n}'
 	},
-	javascript: { //FINISHED
+	javascript: {
 		variableShortcut: 'var ',
 		constVariableShortcut: 'const ',
 		functionShortcut: 'function ',
 		ifShortcut: 'if () {\n\n}'
 	},
-	kotlin: { //FINISHED
+	kotlin: {
 		variableShortcut: 'var ',
 		constVariableShortcut: 'const val ',
 		functionShortcut: 'fun ',
 		ifShortcut: 'if () {\n\n}'
 	},
-	lua: { //FINISHED
+	lua: {
 		variableShortcut: '',
 		constVariableShortcut: '',
 		functionShortcut: 'function ',
 		ifShortcut: 'if  then\n\nend'
 	},
-	php: { //FINISHED
+	php: {
 		variableShortcut: '$',
 		constVariableShortcut: 'const ',
 		functionShortcut: 'function ',
 		ifShortcut: 'if ($) {}'
 	},
-	python: { //FINISHED
+	python: {
 		variableShortcut: '',
 		constVariableShortcut: '',
 		functionShortcut: 'def ():',
 		ifShortcut: 'if :'
 	},
-	r: { //FINISHED
+	r: {
 		variableShortcut: '',
 		constVariableShortcut: '',
 		functionShortcut: ' <- function() {\n\n}',
 		ifShortcut: 'if () {\n\n}'
 	},
-	ruby: { //FINISHED
+	ruby: {
 		variableShortcut: '',
 		constVariableShortcut: '',
 		functionShortcut: 'def \n\nend',
 		ifShortcut: 'if \n\nend'
 	},
-	rust: { //FINISHED
+	rust: {
 		variableShortcut: 'let mut ',
 		constVariableShortcut: 'let ',
 		functionShortcut: 'fn () {\n\n}',
 		ifShortcut: 'if  {\n\n}'
 	},
-	sql: { //FINISHED
+	sql: {
 		variableShortcut: 'SET ',
 		constVariableShortcut: '',
 		functionShortcut: '',
 		ifShortcut: 'SELECT IF()'
 	},
-	swift: { //FINISHED
+	swift: {
 		variableShortcut: 'var ',
 		constVariableShortcut: 'let ',
 		functionShortcut: 'func ',
 		ifShortcut: 'if  {\n\n}'
 	},
-	typescript: { //FINISHED
+	typescript: {
 		variableShortcut: 'var ',
 		constVariableShortcut: 'const ',
 		functionShortcut: 'function ',
 		ifShortcut: 'if () {\n\n}'
 	},
-	zig: { //FINISHED
+	zig: {
 		variableShortcut: 'var x: ',
 		constVariableShortcut: 'const x: ',
 		functionShortcut: 'fn () {\n\n}',
