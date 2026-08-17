@@ -4,7 +4,7 @@
   "description": "Keybinds that make it faster to type code constructs.",
   "publisher": "zackdcat",
   "icon": "icon.png",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "engines": {
     "vscode": "^1.125.0"
   },

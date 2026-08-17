@@ -1,5 +1,5 @@
 # TERSE KEYS
-<sub>v1.0.1</sub><br>
+<sub>v1.0.2</sub><br>
 
 Keybinds that make it faster to type code constructs.
 
