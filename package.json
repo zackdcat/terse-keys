@@ -1,9 +1,10 @@
 {
   "name": "terse-keys",
-  "displayName": "terse-keys",
+  "displayName": "Terse Keys",
   "description": "Keybinds that make it faster to type code constructs.",
   "publisher": "zackdcat",
-  "version": "1.0.0",
+  "icon": "icon.png",
+  "version": "1.0.1",
   "engines": {
     "vscode": "^1.125.0"
   },
