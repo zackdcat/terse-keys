@@ -1,5 +1,5 @@
 # TERSE KEYS
-<sub>v2.1.2</sub><br>
+<sub>v2.1.3</sub><br>
 
 Keybinds that make it faster to type code constructs.
 
@@ -51,8 +51,8 @@ This project is source-available, not open source. You may view and modify the c
 ### Version Number Explanation
 
 - First number corresponds to a big update adding a full feature that greatly impacts the vscode extension or changes something drastically.
-- Second number corresponds to changes that have been made to the vscode extension since the last update of the second number.
-- Third number corresponds to the amount of commits that have been made since the last update of the second number.
+- Second number corresponds to changes that have been made to the vscode extension since the last update of the first number.
+- Third number corresponds to the amount of commits that have been made since the last update of the first number.
 
 ### Credits
 
